@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./Dockerfile/go-dev.Dockerfile
+    container_name: microservices
+    volumes:
+      - './microservices:/app'
+    working_dir: /app
+    ports:
+      - 8181:8181
+    command: go run main.go
